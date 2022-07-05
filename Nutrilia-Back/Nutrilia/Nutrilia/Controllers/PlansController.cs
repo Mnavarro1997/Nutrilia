@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace Nutrilia.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PlansController : Controller
     {
         private readonly EcommerceDb _context;

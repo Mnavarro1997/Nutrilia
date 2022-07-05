@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace Nutrilia.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class CartController : Controller
     {
         private readonly EcommerceDb _context;
@@ -25,7 +27,7 @@ namespace Nutrilia.Controllers
             return await _context.Cart.ToListAsync();
         }
 
-        // GET: api/Plans/1
+        // GET: api/Cart/1
         [HttpGet("{id}")]
         public async Task<ActionResult<Cart>> GetCart(int id)
         {

@@ -28,12 +28,8 @@ namespace Nutrilia
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Nutrilia", Version = "v1" });
-            });
+            services.AddSwaggerGen();
             services.AddDbContext<EcommerceDb>(o => o.UseSqlite(@"Data Source=.\ecommerceDb.db"));
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
@@ -45,18 +41,22 @@ namespace Nutrilia
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, EcommerceDb ecommerceDb)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Nutrilia v1"));
             }
-
             app.UseCors("MyPolicy");
 
             app.UseHttpsRedirection();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                string baseApiUrl = Configuration.GetSection("BaseApiUrl").Value;
+                c.SwaggerEndpoint("" + baseApiUrl + "/swagger/v1/swagger.json", "My API V1");
+
+            });
 
             app.UseRouting();
 
@@ -66,7 +66,7 @@ namespace Nutrilia
             {
                 endpoints.MapControllers();
             });
-            
+            ecommerceDb.Database.Migrate();
         }
     }
 }

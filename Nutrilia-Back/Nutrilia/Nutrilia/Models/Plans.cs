@@ -1,23 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
 namespace Nutrilia.Models
 {
-    public class Plans
+    public partial class Plans
     {
-        public Plans()
-        {
-            Cart = new HashSet<Cart>();
-            Users = new HashSet<Users>();
-
-        }
+        [Key]
         public int Id_Plan { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        public string ImageURl { get; set; }
 
         [JsonIgnore]
-        public virtual ICollection<Cart> Cart { get; set; }
-        public virtual ICollection<Users> Users { get; set; }
+        public ICollection <Cart> Cart { get; set; }
+        public ICollection<Users> Users { get; set; }
     }
 }
