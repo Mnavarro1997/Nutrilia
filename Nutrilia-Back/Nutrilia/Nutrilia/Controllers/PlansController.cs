@@ -1,83 +1,105 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Nutrilia.DataBase;
+using Nutrilia.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Nutrilia.Controllers
 {
     public class PlansController : Controller
     {
-        // GET: PlansController
-        public ActionResult Index()
+        private readonly EcommerceDb _context;
+
+        public PlansController(EcommerceDb context)
         {
-            return View();
+            _context = context;
         }
 
-        // GET: PlansController/Details/5
-        public ActionResult Details(int id)
+        // GET: api/Plans
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Plans>>> GetPlans()
         {
-            return View();
+            return await _context.Plans.ToListAsync();
         }
 
-        // GET: PlansController/Create
-        public ActionResult Create()
+        // GET: api/Plans/1
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Plans>> GetPlan(int id)
         {
-            return View();
+            var plan = await _context.Plans.FindAsync(id);
+
+            if (plan == null)
+            {
+                return NotFound();
+            }
+
+            return plan;
         }
 
-        // POST: PlansController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // PUT: api/Plans/5
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutPlan(int id, Plans plan)
         {
+            if (id != plan.Id_Plan)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(plan).State = EntityState.Modified;
+
             try
             {
-                return RedirectToAction(nameof(Index));
+                await _context.SaveChangesAsync();
             }
-            catch
+            catch (DbUpdateConcurrencyException)
             {
-                return View();
+                if (!PlanExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
             }
+
+            return NoContent();
         }
 
-        // GET: PlansController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: PlansController/Edit/5
+        // POST: api/Plans
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public async Task<ActionResult<Plans>> PostPlan(Plans plans)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _context.Plans.Add(plans);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction("GetPlan", new { id = plans.Id_Plan }, plans);
         }
 
-        // GET: PlansController/Delete/5
-        public ActionResult Delete(int id)
+        // DELETE: api/Plans/5
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePlan(int id)
         {
-            return View();
+            var plan = await _context.Plans.FindAsync(id);
+            if (plan == null)
+            {
+                return NotFound();
+            }
+
+            _context.Plans.Remove(plan);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
-        // POST: PlansController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        private bool PlanExists(int id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return _context.Plans.Any(e => e.Id_Plan == id);
         }
     }
 }

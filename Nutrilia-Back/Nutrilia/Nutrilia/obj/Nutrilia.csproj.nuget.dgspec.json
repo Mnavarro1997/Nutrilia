@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj": {}
+    "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj": {}
   },
   "projects": {
-    "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj": {
+    "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj",
+        "projectUniqueName": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj",
         "projectName": "Nutrilia",
-        "projectPath": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj",
+        "projectPath": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj",
         "packagesPath": "C:\\Users\\G1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia-Back\\Nutrilia\\Nutrilia\\obj\\",
+        "outputPath": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia\\Nutrilia-Back\\Nutrilia\\Nutrilia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

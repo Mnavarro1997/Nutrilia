@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rAVCyNLh1zem/xj8kiYhUzgFsfhD/F6vy5ohzOIzkOWOTax6AzzfV/t2nmwSC9sgbzAFryVhDo8DyQ6JLnwl9w==",
+  "dgSpecHash": "VKT9xW4qA+La4ZE6IOdWtO7wwhaquUxB/zqgy+ISFMhDboA56dt164SBaxfxr+ZCZu0BCX0+Un61O/X+oVIrDA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj",
+  "projectFilePath": "C:\\Users\\G1\\OneDrive\\Escritorio\\NUTRILÍA-Salud, Bienestar\\Nutrilia\\Nutrilia-Back\\Nutrilia\\Nutrilia\\Nutrilia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\G1\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\G1\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
