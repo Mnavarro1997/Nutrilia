@@ -1,29 +1,24 @@
 <template>
-<div id = "app">
-  <NavComp />
-  <div class = "message">
-    <div class = "container">
-      <div class = "row">
-        <div class = "col-md-12">
-          <h1>Bienvenido a Nutrilia</h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Quisquam, quidem, quisquam.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<header>
+        <nav id="navArea">
+            <router-link to="/">
+            <div class="nutrilia">
+              <div class = "img-header">
+                <a href="#">
+                  <img style="height: 40px;" src="./images/logo.png" alt="LOGO">
+                </a>
+               </div> 
+                <p style="color: #000000;">Iniciar Sesión</p>
+                <p style="color: #000000;">Registro</p>
+            </div>
+            </router-link>
+        </nav>
+    </header>
 </template>
 
 <script>
-import NavComp from './components/NavComp.vue'
 export default {
-  name: 'App',
-  components: {
-    NavComp
-  }
+
 }
 </script>
 

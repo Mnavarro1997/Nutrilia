@@ -1,23 +1,14 @@
 <template>
-<header>
-        <nav id="navArea">
-            <router-link to="/">
-            <div class="nutrilia">
-              <div class = "img-header">
-                <a href="#">
-                  <img style="height: 4px;" src="../images/logo.png" alt="LOGO">
-                </a>
-               </div> 
-                <p style="color: #000000;">Iniciar Sesión</p>
-                <p style="color: #000000;">Registro</p>
-            </div>
-            </router-link>
-        </nav>
-    </header>
+<p>BIENVENID@ A NUTRILIA</p>
+<div class="tituloNovedades">
+    <img src="../images/pasta_aceitunas.webp" alt="corasao" style="height: 35px; margin-right: 10px;">
+    <b>Novedades</b>
+    <img src="../images/pasta_pesto.webp" alt="corasao" style="height: 35px; margin-left: 10px;">
+  </div>
 </template>
 <script>
 export default {
-  name: 'NavComp'
+  name: 'HomeView'
 }
 </script>
 <style>
