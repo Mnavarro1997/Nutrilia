@@ -15,6 +15,7 @@
         <p>Nuestra misión es ayudarte a encontrar la mejor forma de alcanzar tu objetivo.</p>
       </div>
     </div>
+    <p style = "font-size: 20px; font-weight: bold;">¿QUIERES CONOCER NUESTROS PLANES?</p>
     <div class = "plans" v-for="plan in plans " :key="plan.id_Plan">
     <div class="plan-item">
       <p>{{plan.name}}</p>
@@ -29,7 +30,16 @@
                 </router-link>
             </div>
     </div>
+    
+    <div class = "recipes" v-for="recipe in recipes " :key="recipe.id_recipe">
+    <p>DESTACADO: </p>
+      <div class = "recipe-item">
+      <p>{{recipe.name}}</p>
+      <img class="imgenPlan" :src="recipe.url" alt="">
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -55,7 +65,30 @@ export default {
     };
 },
 methods:{
-
+editar(id_recipe){
+      this.$router.push('/recipe/' + id_recipe);
+    },
+    viewProduct(recipe){
+      this.recipe = recipe
+      this.active.recipe_drawer = true;
+      console.log(this.recipe);
+    },
+    closeProductDrawer(){
+      this.active.recipe_drawer = false;
+    },
+    getProduct(id_recipe){
+      let data = fetch('https://localhost:44330/api/Recipes/' + id_recipe)
+      .then(response=> response.json())
+      .then(data=> data.filter(recipe=> recipe.id_recipe == id_recipe))
+      .then(data=> {
+          if(data.length > 0){
+              return data[0]
+          }else{
+              return null
+          }
+      })
+      return data
+}
 }
 }
 </script>
@@ -66,7 +99,7 @@ methods:{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(132, 218, 132);
+  background-color: rgb(112, 187, 112);
 }
 .somos{
   display: flex;
@@ -92,6 +125,11 @@ methods:{
   padding: 1rem;
   text-align: center;
 }
+.plan-item p {
+  font-size: 15px;  
+  font-weight: bold;
+  color: rgb(148, 12, 12);
+}
 .comprar {
     text-align: center;
 }
@@ -109,5 +147,13 @@ methods:{
     border-radius: 5px;
     height: 150px;
     margin-left: 20px;
+}
+.recipes{
+  display: flex;
+  flex-direction: row;
+}
+.recipes p{
+font-size: medium;
+font-weight: bold;
 }
 </style>
