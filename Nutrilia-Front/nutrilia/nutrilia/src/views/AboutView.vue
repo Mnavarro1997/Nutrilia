@@ -128,6 +128,7 @@ export default {
   font-size: 10px;
   font-weight: bold;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
 }
 .imgenCategoriaa{
   width: 35%;
