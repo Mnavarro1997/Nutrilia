@@ -3,15 +3,16 @@
       <h2>¿QUIERES CAMBIAR TU VIDA?</h2>
     <img src = "../assets/xixi.jpg" alt="" >
     <h3>¡NOSOTRAS TE AYUDAMOS!</h3>
+    <p>QUIENES SOMOS:</p>
     <div class="somos">
       <div class="somos-item">
         <div class="foto"><img src = "../assets/nutri_deportistas.jpg" alt="" style=" width: 1350%;"></div>
-        <h4>SOMOS</h4>
+        <h4>INES</h4>
         <p>Nuestra misión es ayudarte a encontrar la mejor forma de alcanzar tu objetivo.</p>
       </div>
       <div class="somos-item">
         <div class="foto"><img src = "../assets/nutri_deportistas.jpg" alt="" style=" width: 1350%;" ></div>
-        <h4>NOSOTROS</h4>
+        <h4>CARMEN</h4>
         <p>Nuestra misión es ayudarte a encontrar la mejor forma de alcanzar tu objetivo.</p>
       </div>
     </div>
