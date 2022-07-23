@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <nav style = "display : flex; flex-direction: row;justify-content: space-between;">
-      <router-link to="/about"><img src = "./assets/user.png" alt="header" style="height: 55px; margin-right: 10px;"></router-link> <!--inicio de sesion y registro -->
+      <router-link to="/login"><img src = "./assets/user.png" alt="header" style="height: 55px; margin-right: 10px;"></router-link> <!--inicio de sesion y registro -->
       <router-link to="/"><img src = "./assets/logo.png" alt="header" style="height: 90px; margin-left:30px; display: float: left;"></router-link> 
-      <router-link to="/about"> <img src = "./assets/cart.png" alt="header" style="height: 55px; margin-right: 10px;"></router-link> <!--carrito de la compra -->
+      <router-link to="/cart"> <img src = "./assets/cart.png" alt="header" style="height: 55px; margin-right: 10px;"></router-link> <!--carrito de la compra -->
     </nav>
     <router-view/>
     <nav>
