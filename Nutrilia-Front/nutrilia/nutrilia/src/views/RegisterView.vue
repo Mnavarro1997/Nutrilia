@@ -1,7 +1,7 @@
 <template>
 <div class="box">
     <form @submit.prevent="registerUser">
-      <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+      <h1 class="mb-8 text-3xl text-center">REGISTRO</h1>
       <input type="text" placeholder="Full Name" v-model="name" required />
       <input type="email" placeholder="Email" v-model="email" required />
       <input
@@ -14,8 +14,7 @@
     </form>
 
     <div  style="margin-top: 10px">
-      <input type="text" placeholder="Nick" v-model="nick" required />
-      <a  style="text-decoration: none;" href="/login">Ya tienes cuenta, logeate</a>
+      <a  style="text-decoration: none;" href="/login">Ya tienes cuenta, inicia sesión</a>
     </div>
     
   </div>
@@ -29,7 +28,6 @@ export default {
       name: "", 
       email: "",
       password: "",
-      nick: "",
     };
   },
   methods: {

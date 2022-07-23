@@ -3,10 +3,8 @@
         <div style="display:flex" @click="$router.push(`/plan/${plan.id_Plan}`)">
         
         <img class="imgh" :src="this.plan.imageURl"/>
-    
 </div>
-
-    </div>
+</div>
 </template>
 <script>
 

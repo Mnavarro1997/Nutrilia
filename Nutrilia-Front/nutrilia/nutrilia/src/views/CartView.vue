@@ -1,6 +1,7 @@
 <template>
  <div>
       <h1>Carrito de la compra de {{user.name}}</h1>
+      hola don pepito
 
   <ul>
       <li v-for="plan in plans"

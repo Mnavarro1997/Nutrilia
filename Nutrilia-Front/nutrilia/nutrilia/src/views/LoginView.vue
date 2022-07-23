@@ -1,7 +1,7 @@
 <template>
 <div class="box">
       <form @submit.prevent="loginUser">
-        <h1>Login</h1>
+        <h1>INICIO DE SESION</h1>
         <input type="text" placeholder="Email" v-model="email" required />
         <input
           type="password"
