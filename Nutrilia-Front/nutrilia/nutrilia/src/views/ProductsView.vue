@@ -11,7 +11,7 @@
       <p>{{plan.price}} € </p>
     </div>
     <div class="comprar">
-                <router-link :to="{ name: 'Cart', params: { id: plan.id_Plan} }">
+                <router-link to="/cart">
                 <b-button class="boton">
                   <h1>Comprar</h1>
                 </b-button>

@@ -27,8 +27,14 @@ export default {
       email: "",
       password: "",
     };
-
+ 
 },
+created(){
+  fetch('https://localhost:44338/api/Users')
+  .then(result => result.json())
+  .then(data => this.users = data)
+},
+
 methods:
 {
     loginUser() {

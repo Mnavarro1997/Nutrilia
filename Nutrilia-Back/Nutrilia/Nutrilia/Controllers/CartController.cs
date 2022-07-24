@@ -71,6 +71,35 @@ namespace Nutrilia.Controllers
 
             return NoContent();
         }
+        [HttpGet]
+        [Route("/getCartBy/{idUser}/{idPlan}")]
+        public async Task<ActionResult<Cart>> GetCartBy(int idUser, int idPlan)
+        {
+            var cart = _context.Cart.Where(item => item.Id_User == idUser && item.Id_Plan == idPlan).ToList();
+
+            if (cart == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cart);
+        }
+        
+
+        [HttpGet]
+        [Route("/userCart/{idUser}")]
+        public async Task<ActionResult<Cart>> UserCart(int idUser)
+        {
+            var cart = _context.Cart.Where(item => item.Id_User == idUser).ToList();
+
+            if (cart == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(cart);
+        }
+
 
         // POST: api/Cart
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

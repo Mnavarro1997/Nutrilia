@@ -24,7 +24,7 @@
       <p>{{plan.price}} € </p>
     </div>
     <div class="comprar">
-                <router-link :to="{ name: 'Products'}">
+                <router-link to="/products">
                 <b-button class="boton">
                   <h1>Detalles</h1>
                 </b-button>
@@ -118,6 +118,8 @@ editar(id_recipe){
   flex-direction: column;
   align-items: center;
   width: 25%;
+  flex-wrap: wrap;
+  flex-basis: 2;
   border: 4px solid rgb(90, 89, 89);
   margin-top: 5px;
   background-color: rgb(240, 230, 230);
@@ -152,6 +154,8 @@ editar(id_recipe){
 .recipes{
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 2;
 }
 .recipes p{
 font-size: medium;
