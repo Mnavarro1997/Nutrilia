@@ -6,14 +6,18 @@
     <p>QUIENES SOMOS:</p>
     <div class="somos">
       <div class="somos-item">
-        <div class="foto"><img src = "../assets/nutri_deportistas.jpg" alt="" style=" width: 1350%;"></div>
-        <h4>INES</h4>
-        <p>Nuestra misión es ayudarte a encontrar la mejor forma de alcanzar tu objetivo.</p>
+        <div class="foto"><img src = "../assets/ines.png" alt="" style=" width: 400px;"></div>
+        <h4>INES SALDAÑA</h4>
+        <p>Graduada en ciencias de la actividad física y el deporte. Máster en educación secundaria y máster en nutrición y salud. 
+          Amante de los deportes de montaña y los deportes colectivos.
+          Creadora del perfil "AFicionate" para la promoción de la actividad física y deporte  desde nuevas plataformas.</p>
       </div>
       <div class="somos-item">
-        <div class="foto"><img src = "../assets/nutri_deportistas.jpg" alt="" style=" width: 1350%;" ></div>
-        <h4>CARMEN</h4>
-        <p>Nuestra misión es ayudarte a encontrar la mejor forma de alcanzar tu objetivo.</p>
+        <div class="foto"><img src = "../assets/carmen.png" alt="" style=" width: 400px;" ></div>
+        <h4>CARMEN CERVERA</h4>
+        <p>Graduada en nutricion y dietetica. Máster en educación en patologías y máster en nutrición y salud. 
+          Amante de los deportes de montaña y los deportes colectivos.
+        </p>
       </div>
     </div>
     <p style = "font-size: 20px; font-weight: bold;">¿QUIERES CONOCER NUESTROS PLANES?</p>
@@ -108,6 +112,11 @@ editar(id_recipe){
   align-items: center;
   justify-content: center;
   margin-top: 10px;
+}
+.somos p{
+  font-size: 20px;
+  font-weight: bold;
+  width: 50%;
 }
 .foto{
   width: 7%;
