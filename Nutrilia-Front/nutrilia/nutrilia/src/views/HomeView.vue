@@ -1,22 +1,33 @@
 <template>
   <div class="home">
       <h2>¿QUIERES CAMBIAR TU VIDA?</h2>
-    <img src = "../assets/xixi.jpg" alt="" >
+    <div class="slider-container">  
+    <img
+    class="slider-item"
+    src="../assets/corazon.jpg"
+  />
+  <img
+    class="slider-item"
+    src="../assets/sandia.jpg"
+  />
+</div> 
     <h3>¡NOSOTRAS TE AYUDAMOS!</h3>
-    <p>QUIENES SOMOS:</p>
-    <div class="somos">
+    <h1>QUIENES SOMOS:</h1>
+    <div class="somos" >
       <div class="somos-item">
-        <div class="foto"><img src = "../assets/ines.png" alt="" style=" width: 400px;"></div>
-        <h4>INES SALDAÑA</h4>
+        <div class="foto"><img src = "../assets/ines.png" alt="" style=" width: 850%;   border: 3px solid black;
+  padding: 15px"></div>
+        <h2>INES SALDAÑA</h2>
         <p>Graduada en ciencias de la actividad física y el deporte. Máster en educación secundaria y máster en nutrición y salud. 
           Amante de los deportes de montaña y los deportes colectivos.
           Creadora del perfil "AFicionate" para la promoción de la actividad física y deporte  desde nuevas plataformas.</p>
       </div>
-      <div class="somos-item">
-        <div class="foto"><img src = "../assets/carmen.png" alt="" style=" width: 400px;" ></div>
-        <h4>CARMEN CERVERA</h4>
-        <p>Graduada en nutricion y dietetica. Máster en educación en patologías y máster en nutrición y salud. 
-          Amante de los deportes de montaña y los deportes colectivos.
+      <div class="somos-item" >
+        <div class="foto"><img src = "../assets/carmen.png" alt="" style=" width: 600%;   border: 3px solid black;
+  padding: 15px"></div>
+        <h2>CARMEN CERVERA</h2>
+        <p>Graduada en nutrición humana y dietética por la Universidad de Zaragoza. Máster en calidad, seguridad y tecnología de los alimentos.
+Carmen habla de la importancia de una buena educación nutricional desde que somos pequeños.  Nutrición clínica en consulta, tratando diferentes casos como perdida de peso, patologias digestivas y hormonales, nutrición deportiva... siempre acompañado de actividad física dirigida por un profesional!
         </p>
       </div>
     </div>
@@ -35,15 +46,18 @@
                 </router-link>
             </div>
     </div>
-    
+    <h2>NUESTRAS RECETAS SEMANALES DESTACADAS: </h2>
     <div class = "recipes" v-for="recipe in recipes " :key="recipe.id_recipe">
-    <p>DESTACADO: </p>
+      
       <div class = "recipe-item">
-      <p>{{recipe.name}}</p>
+        <router-link to="/about">
+          <p>{{recipe.name}}</p>
       <img class="imgenPlan" :src="recipe.url" alt="">
+        </router-link>
+      
       </div>
     </div>
-  </div>
+  </div> 
 
 </template>
 
@@ -106,6 +120,18 @@ editar(id_recipe){
   justify-content: center;
   background-color: rgb(112, 187, 112);
 }
+.slider-container {
+  display: flex;
+  width: 80%;
+  height: 600px;
+  overflow-x: scroll;
+}
+
+.slider-container img {
+  flex: 0 0 80%;
+  width: 80%;
+  object-fit: cover;
+}
 .somos{
   display: flex;
   flex-direction: row;
@@ -114,9 +140,10 @@ editar(id_recipe){
   margin-top: 10px;
 }
 .somos p{
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
-  width: 50%;
+  width: 60%;
+  
 }
 .foto{
   width: 7%;
